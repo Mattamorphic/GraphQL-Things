@@ -142,3 +142,42 @@ mutation {
   }
 }
 ```
+
+## Realtime updates with Subscriptions
+These allow the client to subscribe to an event. When the client subscribes, this will open a steady connection to the server. When that event occurs, the server pushes the payload to the client. This is like subscribing to webhooks for an API.
+
+### Example
+```
+subscription {
+  newUser {
+    name
+    age
+  }
+}
+```
+
+## Defining a full SDL
+```
+type Query {
+  allUsers(last: Int): [User!]!
+}
+
+type Mutation {
+  createUser(name: String!, age: Int!): User!
+}
+
+type Subscription {
+  newUser: User!
+}
+
+type User {
+  name: String!
+  age: Int!
+  posts: [Post!]!
+}
+
+type Post {
+  title: String!
+  author: User!
+}
+```
