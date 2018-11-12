@@ -1,0 +1,14 @@
+# Ignore compile Typescript Files
+**/*.js
+**/*.map
+**/*.d.ts
+
+# Ignore build folder
+**/build
+
+# Ignore local dev files
+**/node_modules
+**/package-lock.json
+**/yarn.lock
+**/*.log
+**/*.clang-format
